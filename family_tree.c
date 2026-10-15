@@ -24,10 +24,44 @@ Person *create_person(const char *name, int age)
     return p;
 }
 
+void read_person_info(const char *role, char *name_out, int *age_out)
+{
+    printf("Enter %s's name: ", role);
+    scanf("%49s", name_out);
+    printf("Enter %s's age: ", role);
+    scanf("d", age_out);
+}
+
 int main(void)
 {
-    Person *test = create_person("Test", 19);
-    printf("%s is %d\n", test->name, test->age);
-    free(test);
+    Person *people[7];
+    char name[50];
+    int age;
+
+    read_person_info("Paternal Grandfather", name, &age);
+    people[0] = create_person(name, age);
+
+    read_person_info("Paternal Grandmother", name, &age);
+    people[1] = create_person(name, age);
+
+    read_person_info("Maternal Grandfather", name, &age);
+    people[2] = create_persom(name, age);
+
+    read_person_info("Maternal Grandmother", name, &age);
+    people[3] = create_person(name, age);
+
+    read_person_info("Father", name, &age);
+    people[4] = create_person(name, age);
+
+    read_person_info("Mother", name, &age);
+    people[5] = create_person(name, age);
+
+    read_person_info("Child", name, &age);
+    people[6] = create_person(name, age);
+
+    for (int i = 0; i < 7; i++)
+    {
+        printf("%s %d \n", people[i]->name, people[i]->age);
+    }
     return 0;
 }
