@@ -92,10 +92,4 @@ int main(void)
     print_family_relationships(people[6]);
 
     return 0;
-
-    // for (int i = 0; i < 7; i++)
-    // {
-    //     printf("%s %d \n", people[i]->name, people[i]->age);
-    // }
-    // return 0;
 }
